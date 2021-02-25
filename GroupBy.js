@@ -27,3 +27,14 @@ var groupBy = function(list, key1, key2) {
 var groupedArray = groupBy(personList, "parentId", "id");
 
 console.log(groupedArray);
+
+/*
+Output:
+  {1: Array(2), 5: Array(1), 11: Array(2), 17: Array(2), 18: Array(1), parent: Array(2)}
+  1: (2) [2, 3]
+  5: [4]
+  11: (2) [12, 13]
+  17: (2) [14, 15]
+  18: [16]
+  parent: (2) [1, 17]
+*/
