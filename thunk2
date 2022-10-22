@@ -1,0 +1,11 @@
+function addAsync(a,b,cb) {
+    setTimeout(function() {cb(a+b)}, 1000);
+}
+
+let thunk = function(cb) {
+    addAsync(10,20, cb)
+}
+
+thunk(function(sum) {
+    console.log(sum);
+})

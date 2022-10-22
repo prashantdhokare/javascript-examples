@@ -1,0 +1,17 @@
+function makeThunk(fn){
+    let args = [].slice.call(arguments, 1);
+    return function(cb) {
+        args.push(cb);
+        fn.apply(null, args);
+        
+    }
+}
+
+function addAsync(a,b,cb) {
+    setTimeout(function() {cb(a+b)}, 1000);
+}
+
+let thunk = makeThunk(addAsync, 10, 20);
+thunk(function(sum) {
+    console.log(sum);
+})
